@@ -1,0 +1,133 @@
+[
+    {
+        "id": 1,
+        "nombre": "Remera roja Puma",
+        "precio": 2100,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-1.jpg",
+        "redireccion": "views/productos/remeras/remera-roja.html"
+    },
+
+    {
+        "id": 2,
+        "nombre": "Zapatillas negras HRX",
+        "precio": 21300,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-2.jpg",
+        "redireccion": "views/productos/zapatillas/zapatillas-negras.html"
+    },
+
+    {
+        "id": 3,
+        "nombre": "Jogging gris Adidas",
+        "precio": 7800,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-3.jpg",
+        "redireccion": "views/productos/pantalones/jogging-gris-adidas.html"
+    },
+
+    {
+        "id": 4,
+        "nombre": "Chomba azul Puma",
+        "precio": 4300,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-4.jpg",
+        "redireccion": "views/productos/remeras/chomba-puma.html"
+    },
+
+    {
+        "id": 5,
+        "nombre": "Zapatillas grises HRX",
+        "precio": 19000,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-5.jpg",
+        "redireccion": "views/productos/zapatillas/zapatillas-grises-hrx.html"
+    },
+
+    {
+        "id": 6,
+        "nombre": "Remera negra Puma",
+        "precio": 2300,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-6.jpg",
+        "redireccion": "views/productos/remeras/remera-negra-puma.html"
+    },
+
+    {
+        "id": 7,
+        "nombre": "Pack medias por 3 HRX",
+        "precio": 1700,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-7.jpg",
+        "redireccion": "views/productos/accesorios/medias-hrx.html"
+    },
+
+    {
+        "id": 8,
+        "nombre": "Reloj negro Fossil",
+        "precio": 27900,
+        "cantidad": 1,
+        "stock": 5,
+        "vendido": false,
+        "img": "assets/img/product-8.jpg",
+        "redireccion": "views/productos/accesorios/reloj-negro-fossil.html"
+    },
+
+    {
+        "id": 9,
+        "nombre": "Reloj con cronometro",
+        "precio": 13000,
+        "cantidad": 1,
+        "stock": 7,
+        "vendido": false,
+        "img": "assets/img/product-9.jpg",
+        "redireccion": "views/productos/accesorios/reloj-cronometro.html"
+    },
+
+    {
+        "id": 10,
+        "nombre": "Zapatillas negras camufladas HRX",
+        "precio": 19800,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-10.jpg",
+        "redireccion": "views/productos/zapatillas/zapatillas-camufladas-hrx.html"
+    },
+
+    {
+        "id": 11,
+        "nombre": "Zapatillas grises Roadster",
+        "precio": 17200,
+        "cantidad": 1,
+        "stock": 5,
+        "vendido": false,
+        "img": "assets/img/product-11.jpg",
+        "redireccion": "./views/productos/zapatillas/zapatillas-grises-roadster.html"
+    },
+
+    {
+        "id": 12,
+        "nombre": "Jogging negro Nike",
+        "precio": 9300,
+        "cantidad": 1,
+        "stock": 10,
+        "vendido": false,
+        "img": "assets/img/product-12.jpg",
+        "redireccion": "./views/productos/pantalones/jogging-negro-nike.html"
+    }
+]

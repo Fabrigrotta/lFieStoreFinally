@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compra | lFie store</title>
+
+<!------ Google fonts ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Poppins:wght@100;200;300;400;500;700&family=Prompt:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!------ Iconos ------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<!------ CSS ------>
+    <link rel="stylesheet" href="../css/estilos.css">
+
+</head>
+<body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="../assets/img/logo.png" alt="logo" width="125px">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="">Sobre nosotros</a></li>
+                        <li><a href="">Contacto</a></li>
+                        <li><a href="">Cuenta</a></li>
+                    </ul>
+                </nav>
+                <img src="../assets/img/cart.png" alt="" width="30px" height="30px">
+                <img src="../assets/img/menu.png" alt="" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+
+<!---------- Detalles de los items del carrito ---------->
+<!-- <div class="small-container cart-page">
+    <table id="contenedor-carrito">
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="" alt="Sin imagen">
+                </div>
+                <div>
+                    <p>No hay producto agregado todavia</p>
+                    <small>Precio: </small>
+                    <a href="">Remove</a>
+                </div>
+            </td>
+            <td><input type="number" value="0"></td>
+            <td>Precio</td>
+        </tr>
+    </table>
+
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>Sin Precio</td>
+            </tr>
+            <tr>
+                <td>IVA</td>
+                <td>Sin Precio</td>
+            </tr>
+            <tr>
+                <td>TOTAL</td>
+                <td>Sin Precio</td>
+            </tr>
+        </table>
+    </div>
+</div> -->
+
+<!---------- Footer ---------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Descarga nuestra App!</h3>
+                <p>Descargar App para Android y IOS mobile</p>
+                <div class="app-logo">
+                    <img src="../assets/img/play-store.png" alt="">
+                    <img src="../assets/img/app-store.png" alt="">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="../assets/img/logo-white.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quo optio perferendis expedita, veritatis dolores!</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Cupones</li>
+                    <li>Blog</li>
+                    <li>Politica</li>
+                    <li>Afiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Siguenos</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright"> Copyright 2022 - FABDesing</p>
+    </div>
+</div>
+
+<script src="../js/main.js" type="module"></script>
+<script src="../js/menuDesplegable.js"></script>
+
+</body>
+</html>
