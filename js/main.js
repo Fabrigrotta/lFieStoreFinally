@@ -15,6 +15,56 @@ const fetchData = async () => {
 }
 
 
+
+
+// document.addEventListener("keyup", e => {
+//     if (e.target.matches("#buscador")){
+//     if (e.key ==="Escape")e.target.value = ""
+//         data.forEach(producto =>{
+//             producto.nombre.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+//             ?producto.nombre.classList.remove("filtro")
+//             :producto.nombre.classList.add("filtro")
+//         })
+//     }
+// })
+
+
+
+
+// const buscador = document.querySelector("#buscador");
+// const texto = buscador.value.toLowerCase();
+
+//     let nombre = data.nombre.toLowerCase();
+//     if(nombre.indexOf(texto) !== -1){}
+
+// const filtrar = () => {
+// const pintarData = data => {
+//     data.forEach(producto => {
+//         div.innerHTML += `<div>
+//                             <a href="../${producto.redireccion}">
+//                             <img src="../${producto.img}"/>
+//                             </a>
+//                             <h4 class"productoNombre">${producto.nombre}</h4>
+//                             <div class="rating">
+//                             <i class="fa-solid fa-star"></i>
+//                             <i class="fa-solid fa-star"></i>
+//                             <i class="fa-solid fa-star"></i>
+//                             <i class="fa-solid fa-star-half-stroke"></i>
+//                         </div>
+//                         </div>
+//                         <div class="card-content">
+//                             <p>$${producto.precio}</p>
+//                         </div>
+//                         <button class="btn alCarrito" id="alCarrito" value="${producto.id}" >Añadir al carrito</button>`
+//                     })
+//                 }
+//             }
+
+
+// buscador.addEventListener("keyup", filtrar);
+
+// filtrar()
+
 // -------------------> Funcion cambiar precio de menor a mayor <-------------------
 
 // const sortMenorMayor = () => {
@@ -53,7 +103,7 @@ const fetchData = async () => {
                                 <a href="../${producto.redireccion}">
                                 <img src="../${producto.img}"/>
                                 </a>
-                                <h4>${producto.nombre}</h4>
+                                <h4 class"productoNombre">${producto.nombre}</h4>
                                 <div class="rating">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -62,7 +112,7 @@ const fetchData = async () => {
                             </div>
                             </div>
                             <div class="card-content">
-                                <p>$${producto.precio}</p>
+                                <p>${producto.precio}</p>
                             </div>
                             <button class="btn alCarrito" id="alCarrito" value="${producto.id}" >Añadir al carrito</button>`
             contenedorProductos.appendChild(div);
@@ -128,7 +178,7 @@ const pintarCarrito = () => {
         templateCarrito.querySelector('th').textContent = producto.id
         templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre
         templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
-        templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
+        templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio
         //botones
         templateCarrito.querySelector('.btnSuma').value = producto.id
         templateCarrito.querySelector('.btnResta').value = producto.id
@@ -138,7 +188,6 @@ const pintarCarrito = () => {
     })
     items.appendChild(fragment)
 
-    console.log(carrito);
     // pintarFooter()
 }
 
@@ -147,8 +196,7 @@ const pintarCarrito = () => {
 
 //     if (Object.keys(carrito).length === 0) {
 //         footerCarrito.innerHTML = `
-//         <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
-//         `
+//                                    <th scope="row" colspan="5">Carrito vacío con innerHTML</th>`
 //         return
 //     }
 
