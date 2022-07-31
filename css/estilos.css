@@ -423,7 +423,7 @@ table {
     flex-wrap: wrap;
 }
 
-th {
+.thColor {
     text-align: left;
     padding: 5px;
     color: #fff;

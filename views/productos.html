@@ -60,47 +60,70 @@
     </div>
 
     <div class="small-container cart-page" id="contenedor-carrito alCarrito">
-        <table id="contenedor-carrito">
-            <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Acción</th>
-                <th>Subtotal</th>
-            </tr>
-            <div id="items">
-            </div>
-            <tr>
+
+            <h4 class="total-price">Carrito de compras</h4>
+        <table class="table">
+            <thead class="thColor">
+                <tr>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+                <tr id="footerCarrito">
+                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                </tr>
+            </tfoot>
+
+        </table>
+            <h4>Cards</h4>
+            <div class="row" id="cards"></div>
+        </div>
+
+        <template id="template-footer">
+            <th>Total productos</th>
+                <td>10</td>
                 <td>
-                        <div>
-                            <p id="nombreCarrito">No hay producto agregado todavia</p>
-                            <small id="precioCarritoUnidad">Precio: </small>
-                        </div>
+                    <button class="btn" id="vaciar-carrito">
+                        Vaciar todo
+                    </button>
+                </td>
+                <td class="font-weight-bold">$ <span>5000</span></td>
+        </template>
+
+        <template id="template-carrito">
+            <tr>
+                <th>id</th>
+                    <td>Café</td>
+                    <td>1</td>
+                    <td>
+                        <button class="btn btnSuma">
+                            +
+                        </button>
+                        <button class="btn btnResta">
+                            -
+                        </button>
                     </td>
-                    <td id="cantidadCarrito">Cantidad</td>
-                    <td><button class="btn" id="carritoSuma">+</button>
-                        <button class="btn" id="carritoResta">-</button>
-                    </td>
-                    <td id="precioCarrito">Precio</td>
+                    <td>$ <span>500</span></td>
             </tr>
+        </template>
 
-            
-
-            <div class="total-price">
-                <table>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td>Sin Precio</td>
-                    </tr>
-                    <tr>
-                        <td>IVA</td>
-                        <td>Sin Precio</td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL</td>
-                        <td>Sin Precio</td>
-                    </tr>
-                </table>
+        <template id="template-card">
+            <div class="col-12 mb-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Titulo</h5>
+                            <p>precio</p>
+                        <button class="btn btn-dark">Comprar</button>
+                    </div>
+                </div>
             </div>
+        </template>
+    </div>
 </div>
 
 

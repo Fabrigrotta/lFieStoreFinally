@@ -89,8 +89,8 @@ const addCarrito = e => {
 const setCarrito = objeto => {
     const producto = {
         id: objeto.querySelector(".alCarrito").value,
-        titulo: objeto.querySelector("h4").textContent,
-        precio: objeto.querySelector("p").textContent,
+        nombre: objeto.querySelector("h4").textContent,
+        precio:  objeto.querySelector("p").textContent,
         cantidad: Number(1)
     }
 
@@ -108,30 +108,49 @@ const setCarrito = objeto => {
     }
 
     carrito[producto.id] = {...producto}
-
+    pintarCarrito()
 }
 
 
 // -------------------> Funcion para pintar el carrito <-------------------
 
-const contenedorCarrito = document.getElementById("contenedor-carrito");
-const cards = document.getElementById("cards");
+const items = document.getElementById('items')
+const cards = document.getElementById('cards')
+const footerCarrito = document.getElementById('footerCarrito')
+const templateFooter = document.getElementById('template-footer').content
+const templateCarrito = document.getElementById('template-carrito').content
+const fragment = document.createDocumentFragment()
 
 const pintarCarrito = () => {
-    console.log(carrito);
-    Object.values(carrito).forEach(producto => {
-        contenedorCarrito.getElementById("nombreCarrito").textContent = producto.nombre
-        contenedorCarrito.getElementById("precioCarritoUnidad").textContent = producto.precio
-        contenedorCarrito.getElementById("precioCarrito").textContent = producto.precio
-        contenedorCarrito.getElementById("cantidadCarrito") = producto.cantidad * producto.precio
-        contenedorCarrito.getElementById("carritoSuma").value.id = producto.id
-        contenedorCarrito.getElementById("carritoResta").value.id = producto.id
+    items.innerHTML = ''
 
-        const clone = contenedorCarrito.cloneNode(true)
+    Object.values(carrito).forEach(producto => {
+        templateCarrito.querySelector('th').textContent = producto.id
+        templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre
+        templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
+        templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
+        //botones
+        templateCarrito.querySelector('.btnSuma').value = producto.id
+        templateCarrito.querySelector('.btnResta').value = producto.id
+
+        const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
     })
     items.appendChild(fragment)
+
+    console.log(carrito);
+    // pintarFooter()
 }
+
+// const pintarFooter = () => {
+//     footerCarrito.innerHTML = ''
+
+//     if (Object.keys(carrito).length === 0) {
+//         footerCarrito.innerHTML = `
+//         <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+//         `
+//         return
+//     }
 
 
 // Crear una función que se llame renderCarrito
