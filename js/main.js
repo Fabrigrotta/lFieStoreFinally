@@ -1,4 +1,5 @@
 let carrito = {}
+
 // -------------------> llamando al api.json <-------------------
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -129,6 +130,7 @@ const fetchData = async () => {
 // -------------------> Toastify boton de comprar <-------------------
 
 
+
 contenedorProductos.addEventListener("click", (e) => {
     addCarrito(e)
 });
@@ -194,10 +196,9 @@ const pintarCarrito = () => {
 
     pintarFooter()
 
+    // -------------------> Almacenamiento por LocalStorage dentro de pintar carrito <-------------------
 
-// -------------------> Almacenamiento por LocalStorage dentro de pintar carrito <-------------------
-
-    localStorage.setItem("carrito", JSON,stringify(carrito))
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 const pintarFooter = () => {
