@@ -1,7 +1,12 @@
+let carrito = {}
 // -------------------> llamando al api.json <-------------------
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchData()
+    if (localStorage.getItem("carrito")) {
+        carrito = JSON.parse(localStorage.getItem("carrito"))
+        pintarCarrito()
+    }
 })
 
 const fetchData = async () => {
@@ -123,7 +128,6 @@ const fetchData = async () => {
 // -------------------> Agregando productos al carrito <-------------------
 // -------------------> Toastify boton de comprar <-------------------
 
-let carrito = {}
 
 contenedorProductos.addEventListener("click", (e) => {
     addCarrito(e)
@@ -166,7 +170,7 @@ const setCarrito = objeto => {
 
 const items = document.getElementById('items')
 const cards = document.getElementById('cards')
-const footerCarrito = document.getElementById('footerCarrito')
+const fooCarrito = document.getElementById('fooCarrito')
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
@@ -188,24 +192,67 @@ const pintarCarrito = () => {
     })
     items.appendChild(fragment)
 
-    // pintarFooter()
+    pintarFooter()
+
+
+// -------------------> Almacenamiento por LocalStorage dentro de pintar carrito <-------------------
+
+    localStorage.setItem("carrito", JSON,stringify(carrito))
 }
 
-// const pintarFooter = () => {
-//     footerCarrito.innerHTML = ''
+const pintarFooter = () => {
+    fooCarrito.innerHTML = ''
+    if (Object.keys(carrito).length === 0) {
+        fooCarrito.innerHTML = `
+                                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`
+    return
+    }
 
-//     if (Object.keys(carrito).length === 0) {
-//         footerCarrito.innerHTML = `
-//                                    <th scope="row" colspan="5">Carrito vacío con innerHTML</th>`
-//         return
-//     }
+
+// -------------------> Funcion para pintar total de los productos <-------------------
+
+    const nCantidad = Object.values(carrito).reduce( (acumulador, {cantidad}) => acumulador + cantidad,0);
+    const nPrecio = Object.values(carrito).reduce((acumulador, {cantidad, precio}) => acumulador + cantidad * precio,0);
+
+    templateFooter.querySelectorAll("td")[0].textContent = nCantidad
+    templateFooter.querySelector("span").textContent = nPrecio
+
+    const clone = templateFooter.cloneNode(true)
+    fragment.appendChild(clone)
+    fooCarrito.appendChild(fragment)
 
 
-// Crear una función que se llame renderCarrito
+// -------------------> Función para vaciar todo <-------------------
 
-// const renderCarrito = (producto) => {views/productos.html
-//     contenedorProductos.addEventListener("click", () => {
-//     })
-// }
+    const btnVaciar = document.getElementById("vaciar-carrito")
+    btnVaciar.addEventListener("click", () => {
+        carrito = {}
+        pintarCarrito()
+    })
+}
 
-// -------------------> Función para eliminar del carrito <-------------------
+
+// -------------------> Función añadir evento a boton suma y boton resta <-------------------
+
+items.addEventListener("click", e => {
+    btnAumentarDisminuir(e)
+})
+
+const btnAumentarDisminuir = e => {
+    if (e.target.classList.contains("btnSuma")) {
+        const producto = carrito[e.target.value.id]
+        producto.cantidad++
+        carrito[e.target.value.id] = {...producto}
+        pintarCarrito()
+    }
+
+    if (e.target.classList.contains("btnResta")) {
+        const producto = carrito [e.target.value.id]
+        producto.cantidad--
+        if (producto.cantidad === 0) {
+            delete carrito[e.target.value.id]
+        }
+        pintarCarrito()
+    }
+    e.stopPropagation()
+}
