@@ -20,83 +20,6 @@ const fetchData = async () => {
     }
 }
 
-
-
-
-// document.addEventListener("keyup", e => {
-//     if (e.target.matches("#buscador")){
-//     if (e.key ==="Escape")e.target.value = ""
-//         data.forEach(producto =>{
-//             producto.nombre.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-//             ?producto.nombre.classList.remove("filtro")
-//             :producto.nombre.classList.add("filtro")
-//         })
-//     }
-// })
-
-
-
-
-// const buscador = document.querySelector("#buscador");
-// const texto = buscador.value.toLowerCase();
-
-//     let nombre = data.nombre.toLowerCase();
-//     if(nombre.indexOf(texto) !== -1){}
-
-// const filtrar = () => {
-// const pintarData = data => {
-//     data.forEach(producto => {
-//         div.innerHTML += `<div>
-//                             <a href="../${producto.redireccion}">
-//                             <img src="../${producto.img}"/>
-//                             </a>
-//                             <h4 class"productoNombre">${producto.nombre}</h4>
-//                             <div class="rating">
-//                             <i class="fa-solid fa-star"></i>
-//                             <i class="fa-solid fa-star"></i>
-//                             <i class="fa-solid fa-star"></i>
-//                             <i class="fa-solid fa-star-half-stroke"></i>
-//                         </div>
-//                         </div>
-//                         <div class="card-content">
-//                             <p>$${producto.precio}</p>
-//                         </div>
-//                         <button class="btn alCarrito" id="alCarrito" value="${producto.id}" >Añadir al carrito</button>`
-//                     })
-//                 }
-//             }
-
-
-// buscador.addEventListener("keyup", filtrar);
-
-// filtrar()
-
-// -------------------> Funcion cambiar precio de menor a mayor <-------------------
-
-// const sortMenorMayor = () => {
-//     productosArray.sort ((a, b) => a.precio - b.precio);
-//     console.log (productosArray);
-//     mostrarListaOrdenada();
-// }
-
-
-// -------------------> Funcion cambiar precio de mayor a menor <-------------------
-
-// const sortMayorMenor = () => {
-//     productosArray.sort ((a, b) => b.precio - a.precio);
-//     console.log (productosArray);
-//     mostrarListaOrdenada();
-// }
-
-
-// -------------------> Funcion mostrar lista ordenada <-------------------
-
-// const mostrarListaOrdenada = () => {
-//     let arrayLista = [];
-//     productosArray.forEach(producto => arrayLista.push(producto.nombre + " $" + producto.precio));
-// }
-
-
 // -------------------> Agregando dinamismo a la pagina de productos <-------------------
 
     const contenedorProductos = document.getElementById("producto-contenedor");
@@ -196,7 +119,8 @@ const pintarCarrito = () => {
 
     pintarFooter()
 
-    // -------------------> Almacenamiento por LocalStorage dentro de pintar carrito <-------------------
+
+// -------------------> Almacenamiento por LocalStorage dentro de pintar carrito <-------------------
 
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
@@ -235,25 +159,27 @@ const pintarFooter = () => {
 
 // -------------------> Función añadir evento a boton suma y boton resta <-------------------
 
-items.addEventListener("click", e => {
-    btnAumentarDisminuir(e)
-})
+// items.addEventListener("click", e => {
+//     btnAumentarDisminuir(e)
+// })
 
-const btnAumentarDisminuir = e => {
-    if (e.target.classList.contains("btnSuma")) {
-        const producto = carrito[e.target.value.id]
-        producto.cantidad++
-        carrito[e.target.value.id] = {...producto}
-        pintarCarrito()
-    }
 
-    if (e.target.classList.contains("btnResta")) {
-        const producto = carrito [e.target.value.id]
-        producto.cantidad--
-        if (producto.cantidad === 0) {
-            delete carrito[e.target.value.id]
-        }
-        pintarCarrito()
-    }
-    e.stopPropagation()
-}
+// const btnAumentarDisminuir = e => {
+//     console.log(e.target.classList.contains('btnSuma'))
+//     if (e.target.classList.contains("btnSuma")) {
+//         const producto = carrito[e.target.dataset.id]
+//         producto.cantidad++
+//         carrito[e.target.dataset.id] = { ...producto }
+//         pintarCarrito()
+//     }
+
+    // if (e.target.classList.contains("btnResta")) {
+    //     const producto = carrito [e.target.id.value]
+    //     producto.cantidad--
+    //     if (producto.cantidad === 0) {
+    //         delete carrito[e.target.id.value]
+    //     }
+    //     pintarCarrito()
+    // }
+    // e.stopPropagation()
+// }
